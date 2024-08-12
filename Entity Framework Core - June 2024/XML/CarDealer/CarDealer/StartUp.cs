@@ -1,10 +1,10 @@
-﻿using CarDealer.Data;
+﻿using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
+using CarDealer.Data;
 using CarDealer.DTOs.Export;
 using CarDealer.DTOs.Import;
 using CarDealer.Models;
-using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
 using ExportPartDTO = CarDealer.DTOs.Export.ExportPartDTO;
 
 namespace CarDealer
@@ -222,62 +222,69 @@ namespace CarDealer
 
             return Serialize<CarPartDTO[]>(carWithParts, "cars");
         }
-
-        public static string GetTotalSalesByCustomer(CarDealerContext context) 
+        public static string GetTotalSalesByCustomer(CarDealerContext context)
         {
-        var dtos=context.Customers
-                .Where(c=>c.Sales.Any())
-                .Select(x=> new CustomerExportDTO()
+            var dtos = context.Customers
+                .Where(c => c.Sales.Any())
+                .Select(x => new
                 {
                     FullName = x.Name,
-                    BoughtCars=x.Sales.Count,
-                    MoneySpent=x.Sales.Sum(s=>s.Car.PartsCars.Sum(p=>p.Part.Price)),
+                    BoughtCars = x.Sales.Count,
+                    MoneySpent = x.Sales
+                        .SelectMany(s => s.Car.PartsCars)
+                        .Sum(pc => pc.Part.Price)
                 })
-                .OrderByDescending(x=>x.MoneySpent)
+                .AsEnumerable()
+                .Select(x => new CustomerExportDTO
+                {
+                    FullName = x.FullName,
+                    BoughtCars = x.BoughtCars,
+                    MoneySpent = x.MoneySpent
+                })
+                .OrderByDescending(x => x.MoneySpent)
                 .ToArray();
 
             return Serialize(dtos, "Customers");
-        }
-
+    }
 
 
         public static string Serialize<T>(T obj, string rootName, bool OmitXmlDeclaration = false)
+    {
+        StringBuilder sb = new StringBuilder();
+        XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
+        XmlSerializer xmlSerializer = new XmlSerializer(typeof(T), xmlRoot);
+
+        // Remove unnecessary namespace
+        XmlSerializerNamespaces xmlNamespaces = new XmlSerializerNamespaces();
+        xmlNamespaces.Add(prefix: string.Empty, ns: string.Empty);
+
+        XmlWriterSettings settings = new XmlWriterSettings
         {
-            StringBuilder sb = new StringBuilder();
-            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T), xmlRoot);
+            OmitXmlDeclaration = OmitXmlDeclaration,
+            Indent = true // Optional: to format the XML with indentation
+        };
 
-            // Remove unnecessary namespace
-            XmlSerializerNamespaces xmlNamespaces = new XmlSerializerNamespaces();
-            xmlNamespaces.Add(prefix: string.Empty, ns: string.Empty);
-
-            XmlWriterSettings settings = new XmlWriterSettings
-            {
-                OmitXmlDeclaration = OmitXmlDeclaration,
-                Indent = true // Optional: to format the XML with indentation
-            };
-
-            using (XmlWriter xmlWriter = XmlWriter.Create(sb, settings))
-            {
-                xmlSerializer.Serialize(xmlWriter, obj, xmlNamespaces);
-            }
-
-            return sb.ToString().TrimEnd();
+        using (XmlWriter xmlWriter = XmlWriter.Create(sb, settings))
+        {
+            xmlSerializer.Serialize(xmlWriter, obj, xmlNamespaces);
         }
 
-        public static T Deserialize<T>(string inputXml, string rootName)
-        {
-            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T), xmlRoot);
-
-            using StringReader stringReader = new StringReader(inputXml);
-            object? deserializedObjects = xmlSerializer.Deserialize(stringReader);
-            if (deserializedObjects == null || deserializedObjects is not T deserializedObjectTypes)
-            {
-                throw new InvalidOperationException();
-            }
-
-            return deserializedObjectTypes;
-        }
+        return sb.ToString().TrimEnd();
     }
+
+    public static T Deserialize<T>(string inputXml, string rootName)
+    {
+        XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
+        XmlSerializer xmlSerializer = new XmlSerializer(typeof(T), xmlRoot);
+
+        using StringReader stringReader = new StringReader(inputXml);
+        object? deserializedObjects = xmlSerializer.Deserialize(stringReader);
+        if (deserializedObjects == null || deserializedObjects is not T deserializedObjectTypes)
+        {
+            throw new InvalidOperationException();
+        }
+
+        return deserializedObjectTypes;
+    }
+}
 }
