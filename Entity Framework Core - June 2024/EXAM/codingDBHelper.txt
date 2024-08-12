@@ -1,0 +1,51 @@
+        private static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
+        {
+            NullValueHandling = NullValueHandling.Ignore,
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            Formatting = Formatting.Indented
+        };
+
+
+
+	        public static string Serialize<T>(T obj, string rootName, bool OmitXmlDeclaration=false)
+        {
+            StringBuilder sb = new StringBuilder();
+            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T), xmlRoot);
+
+            // Remove unnecessary namespace
+            XmlSerializerNamespaces xmlNamespaces = new XmlSerializerNamespaces();
+            xmlNamespaces.Add(prefix: string.Empty, ns: string.Empty);
+
+            XmlWriterSettings settings = new XmlWriterSettings
+            {
+                OmitXmlDeclaration = OmitXmlDeclaration,
+                Indent = true // Optional: to format the XML with indentation
+            };
+
+            using (XmlWriter xmlWriter = XmlWriter.Create(sb, settings))
+            {
+                xmlSerializer.Serialize(xmlWriter, obj, xmlNamespaces);
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+
+
+
+
+        public static T Deserialize<T>(string inputXml, string rootName)
+        {
+            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T), xmlRoot);
+
+            using StringReader stringReader = new StringReader(inputXml);
+            object? deserializedObjects = xmlSerializer.Deserialize(stringReader);
+            if (deserializedObjects == null || deserializedObjects is not T deserializedObjectTypes)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return deserializedObjectTypes;
+        }
