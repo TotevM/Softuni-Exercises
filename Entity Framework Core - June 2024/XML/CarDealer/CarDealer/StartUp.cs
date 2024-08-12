@@ -1,10 +1,10 @@
-﻿using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
-using CarDealer.Data;
+﻿using CarDealer.Data;
 using CarDealer.DTOs.Export;
 using CarDealer.DTOs.Import;
 using CarDealer.Models;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
 using ExportPartDTO = CarDealer.DTOs.Export.ExportPartDTO;
 
 namespace CarDealer
@@ -15,7 +15,7 @@ namespace CarDealer
         {
             CarDealerContext context = new CarDealerContext();
 
-            Console.WriteLine(GetCarsWithTheirListOfParts(context));
+            Console.WriteLine(GetTotalSalesByCustomer(context));
         }
 
         public static string ImportSuppliers(CarDealerContext context, string inputXml)
@@ -199,30 +199,46 @@ namespace CarDealer
 
             return Serialize<List<LocalSuppliersDTO>>(suppliers, "suppliers");
         }
+        public static string GetCarsWithTheirListOfParts(CarDealerContext context)
+        {
+            CarPartDTO[] carWithParts = context.Cars
+                .OrderByDescending(x => x.TraveledDistance)
+                .ThenBy(x => x.Model)
+                .Take(5)
+                .Select(x => new CarPartDTO()
+                {
+                    Make = x.Make,
+                    Model = x.Model,
+                    TraveledDistance = x.TraveledDistance,
+                    Parts = x.PartsCars
+                        .OrderByDescending(x => x.Part.Price)
+                        .Select(pc => new ExportPartDTO()
+                        {
+                            Name = pc.Part.Name,
+                            Price = pc.Part.Price,
+                        }).ToArray()
+                }).ToArray();
 
-         public static string GetCarsWithTheirListOfParts(CarDealerContext context)
-         {
-             CarPartDTO[] carWithParts = context.Cars
-                 .OrderByDescending(x=>x.TraveledDistance)
-                 .ThenBy(x=>x.Model)
-                 .Take(5)
-                 .Select(x => new CarPartDTO()
-                 {
-                     Make = x.Make,
-                     Model = x.Model,
-                     TraveledDistance = x.TraveledDistance,
-                     Parts = x.PartsCars
-                         .OrderByDescending(x => x.Part.Price)
-                         .Select(pc => new ExportPartDTO()
-                         {
-                             Name = pc.Part.Name,
-                             Price = pc.Part.Price,
-                         }).ToArray()
-                 }).ToArray();
 
-
-             return Serialize<CarPartDTO[]>(carWithParts, "cars");
+            return Serialize<CarPartDTO[]>(carWithParts, "cars");
         }
+
+        public static string GetTotalSalesByCustomer(CarDealerContext context) 
+        {
+        var dtos=context.Customers
+                .Where(c=>c.Sales.Any())
+                .Select(x=> new CustomerExportDTO()
+                {
+                    FullName = x.Name,
+                    BoughtCars=x.Sales.Count,
+                    MoneySpent=x.Sales.Sum(s=>s.Car.PartsCars.Sum(p=>p.Part.Price)),
+                })
+                .OrderByDescending(x=>x.MoneySpent)
+                .ToArray();
+
+            return Serialize(dtos, "Customers");
+        }
+
 
 
         public static string Serialize<T>(T obj, string rootName, bool OmitXmlDeclaration = false)
