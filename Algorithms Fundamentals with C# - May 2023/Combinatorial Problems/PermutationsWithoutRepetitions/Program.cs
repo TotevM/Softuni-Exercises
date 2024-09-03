@@ -8,13 +8,14 @@ namespace PermutationsWithoutRepetitions
         {
             arr = Console.ReadLine().Split().ToArray();
             Permute(0);
+
         }
 
         private static  void Permute(int index)
         {
             if (index>=arr.Length)
             {
-                Console.WriteLine(string.Join(" ", arr));
+                Console.WriteLine(string.Join(" ", arr)) ;   
                 return;
             }
 
