@@ -1,17 +1,19 @@
-﻿namespace VariationsWithoutRepetition
+﻿namespace VariationsWithRepetition
 {
     internal class Program
     {
+        private static string[] arr;
         static void Main(string[] args)
         {
-            
+
             string[] arr = Console.ReadLine().Split().ToArray();
             int k = int.Parse(Console.ReadLine());
 
-            FindVariations(arr, k, "", new bool[arr.Length]);
+            List<string> variations = new List<string>();
+            FindVariations(arr, k, "");
         }
 
-        static void FindVariations(string[] elements, int k, string current, bool[] used)
+        static void FindVariations(string[] elements, int k, string current)
         {
             if (current.Length == k)
             {
@@ -21,13 +23,9 @@
 
             for (int i = 0; i < elements.Length; i++)
             {
-                if (!used[i])
-                {
-                    used[i] = true;
-                    FindVariations(elements, k, current + elements[i], used);
-                    used[i] = false;
-                }
+                FindVariations(elements, k, current + elements[i]);
             }
         }
     }
 }
+

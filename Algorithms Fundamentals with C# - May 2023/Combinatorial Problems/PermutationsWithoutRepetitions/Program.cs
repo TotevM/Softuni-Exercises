@@ -8,7 +8,6 @@ namespace PermutationsWithoutRepetitions
         {
             arr = Console.ReadLine().Split().ToArray();
             Permute(0);
-
         }
 
         private static  void Permute(int index)
