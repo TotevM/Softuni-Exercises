@@ -1,0 +1,21 @@
+section p {
+    color: blue;
+    font-weight: bold;
+}
+
+ul > li{
+    background-color: lightgray;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+article + article {
+    background-color: lightyellow;
+    border-left: 4px solid orange;
+
+}
+h2 ~ p {
+    color: darkgreen;
+    font-style: italic;
+    margin-left: 20px;
+}

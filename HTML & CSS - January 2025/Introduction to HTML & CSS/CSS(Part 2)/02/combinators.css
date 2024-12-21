@@ -1,0 +1,15 @@
+div p{
+    color: rgb(49, 205, 52);
+}
+ul li{
+    list-style-type: square;
+}
+p + p{
+    background-color: aquamarine;   
+}
+span{
+    color: red;
+}
+p ~ span {
+    font-weight: bold;
+  }
