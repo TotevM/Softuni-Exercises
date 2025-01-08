@@ -1,0 +1,22 @@
+div{
+    margin: 5px;
+}
+
+div.first{
+    border: 4px black solid;
+}
+
+div.second{
+    border: 3px dashed #333;
+}
+
+div.third{
+    border: 2px dotted #666;
+}
+
+div.fourth{
+    border-top: 3px dashed #333;
+    border-bottom: 3px dashed #333;
+    border-left: 4px solid #000;
+    border-right: 4px solid #000;
+}

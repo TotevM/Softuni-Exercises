@@ -1,0 +1,20 @@
+div{
+    border: 1px black solid;
+}
+
+div.first{
+    height: 200px;
+}
+
+div.second{
+    height: 50px;
+}
+
+div.third{
+    height: 50vh;
+}
+
+div.fourth{
+    min-height: 100px;
+    max-height: 300px;
+}
