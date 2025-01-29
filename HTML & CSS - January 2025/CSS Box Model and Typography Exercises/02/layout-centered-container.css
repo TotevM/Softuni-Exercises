@@ -1,0 +1,37 @@
+body{
+    max-width: 1200px;
+    border: 3px solid;
+    border-color: green;
+    padding: 2em;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+p,h1{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+header, main, footer{
+    height: 3em;
+}
+
+div, header, main, footer{
+    border: solid black;
+    margin: 2em;
+    text-align: center;
+}
+
+.main{
+    border-color: green;
+    padding: 2em;
+}
+
+.container{
+    padding: 2em;
+    border: 3px solid blue;
+}
+
+.item{
+    display: inline-blovk;
+}
