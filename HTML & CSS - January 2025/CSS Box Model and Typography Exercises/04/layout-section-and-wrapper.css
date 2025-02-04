@@ -1,0 +1,47 @@
+body{
+    padding-top: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card{
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.text{
+    padding: 1em;
+}
+
+img{
+    width: 400px;
+    height: auto;
+}
+
+h2{
+    margin-top: 0;
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+p.info{
+    font-weight: 600;
+    margin: 0;
+}
+
+p.link{
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-style: italic;
+}

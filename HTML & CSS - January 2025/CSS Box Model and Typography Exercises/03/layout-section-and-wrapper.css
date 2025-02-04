@@ -1,0 +1,23 @@
+body{
+    max-width: 1200px;
+    margin: 0 auto;
+    border: green 2px solid;
+}
+
+div{
+    padding: 2em;
+    border: 2px solid;
+}
+
+.body{
+    margin: 1em;
+}
+
+.content{
+    text-align: left;
+    border-color: blue;
+}
+
+p{
+    font-weight: 700;
+}

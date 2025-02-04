@@ -1,0 +1,27 @@
+body{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.body{
+    max-width: 650px;
+    height: auto;
+    border: 2px solid gray;
+    padding: 1em;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+
+.subtitle{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+span.bold{
+    font-weight: 600;
+}

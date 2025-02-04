@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 3em;
+}
+
+details {
+    max-width: 600px;
+    border: 1px solid #ccc;
+    margin: auto;
+    padding: 10px;
+    background-color: #fff;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+}
+
+p {
+    margin: 10px 0;
+}
