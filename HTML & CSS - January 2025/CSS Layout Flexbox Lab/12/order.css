@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2{
+    margin-bottom: 0.5em;
+}
+
+body{
+    margin: 2em;
+}
+
+.container + h2{
+    margin-top: 2em;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    width: 300px;
+    padding: 1em;
+    border: 2px solid blue;
+}
+
+.item{
+    background-color: #eee;
+    padding: 20px;
+    border: solid #000 2px;
+}
+
+.one{
+    order: 5;
+}
+
+.two{
+    order: 3;
+}
+
+.three{
+    order: 1;
+}
+
+.four{
+    order: 6;
+}
+
+.five{
+    order: 2;
+}
+
+.six{
+    order: 4;
+}

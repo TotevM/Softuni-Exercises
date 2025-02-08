@@ -12,7 +12,9 @@ body{
 }
 
 .container{
-    height: 200px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    /* height: 200px; */
     width: 400px;
     padding: 1em;
     border: 2px solid blue;
@@ -29,22 +31,10 @@ body{
     margin-top: 2em;
 }
 
-.stretch{
-    align-items: stretch;
+.gap-row{
+    gap: 2em 0;
 }
 
-.flex-start{
-    align-items: flex-start;
-}
-
-.centered{
-    align-items: center;
-}
-
-.flex-end{
-    align-items: flex-end;
-}
-
-.baseline{
-    align-items: baseline;
+.gap-col{
+    gap: 0 2em;
 }

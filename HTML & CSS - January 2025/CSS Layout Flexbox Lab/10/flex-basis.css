@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2{
+    margin-bottom: 0.5em;
+}
+
+body{
+    margin: 2em;
+}
+
+.container + h2{
+    margin-top: 2em;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    width: 300px;
+    padding: 1em;
+    border: 2px solid blue;
+}
+
+.item{
+    flex-basis: 5em;
+    flex-grow: 1;
+    background-color: #eee;
+    padding: 20px;
+    border: solid #000 2px;
+}
+
+.shrink .item{
+    flex-shrink: 0;
+}
+
+.grow{
+    width: 900px;
+}

@@ -12,7 +12,8 @@ body{
 }
 
 .container{
-    height: 200px;
+    flex-wrap: wrap;
+    align-items: flex-start;
     width: 400px;
     padding: 1em;
     border: 2px solid blue;
@@ -29,22 +30,26 @@ body{
     margin-top: 2em;
 }
 
-.stretch{
-    align-items: stretch;
+.zero .item{
+    flex-grow: 0;
 }
 
-.flex-start{
-    align-items: flex-start;
+.one .item{
+    flex-grow: 1;
 }
 
-.centered{
-    align-items: center;
+.second-child :nth-child(2){
+    flex-grow: 1;
 }
 
-.flex-end{
-    align-items: flex-end;
+.prop :nth-child(1) {
+    flex-grow: 1;
 }
-
-.baseline{
-    align-items: baseline;
+  
+.prop :nth-child(2) {
+    flex-grow: 2;
+}
+  
+.prop :nth-child(3) {
+    flex-grow: 3;
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flex-basis.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>flex-basis</h1>
+    <h2>flex-shrink 5em</h2>
+    <div class="container base">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+        <div class="item"><p>5</p></div>
+        <div class="item"><p>6</p></div>
+    </div>
+
+    <h2>flex-basis 5em, flex-shrink 0 (max width 5em)</h2>
+    <div class="container shrink">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+        <div class="item"><p>5</p></div>
+        <div class="item"><p>6</p></div>
+    </div>
+    
+    <h2>flex-basis 5em, flex-grow 0 (min width 5em)</h2>
+    <div class="container grow">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+        <div class="item"><p>5</p></div>
+        <div class="item"><p>6</p></div>
+    </div>
+</body>
+</html>

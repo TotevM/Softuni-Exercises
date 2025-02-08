@@ -11,12 +11,17 @@ body{
     margin: 2em;
 }
 
+.container + h2{
+    margin-top: 2em;
+}
+
 .container{
-    height: 200px;
-    width: 400px;
+    display: flex;
+    align-items: flex-start;
+    width: 500px;
+    height: 250px;
     padding: 1em;
     border: 2px solid blue;
-    display: flex;
 }
 
 .item{
@@ -25,26 +30,14 @@ body{
     border: solid #000 2px;
 }
 
-.container + h2{
-    margin-top: 2em;
-}
-
-.stretch{
-    align-items: stretch;
-}
-
-.flex-start{
-    align-items: flex-start;
-}
-
-.centered{
-    align-items: center;
+.center{
+    align-self: center;
 }
 
 .flex-end{
-    align-items: flex-end;
+    align-self: flex-end;
 }
 
 .baseline{
-    align-items: baseline;
+    align-self: baseline;
 }

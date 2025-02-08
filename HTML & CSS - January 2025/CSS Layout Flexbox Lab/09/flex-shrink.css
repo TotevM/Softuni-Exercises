@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2{
+    margin-bottom: 0.5em;
+}
+
+body{
+    margin: 2em;
+}
+
+.container + h2{
+    margin-top: 2em;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    width: 300px;
+    padding: 1em;
+    border: 2px solid blue;
+}
+
+.item{
+    flex-basis: 300px;
+    background-color: #eee;
+    padding: 20px;
+    border: solid #000 2px;
+}
+
+.second-child .item{
+    flex-shrink: 0;
+}
+
+.second-child .item:nth-child(2) { 
+    flex-shrink: 1;
+}
+
+.zero .item{
+    flex-shrink: 0;
+}
+
+.one .item{
+    flex-shrink: 1;
+}
