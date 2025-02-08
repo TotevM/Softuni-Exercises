@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2{
+    margin-bottom: 0.5em;
+}
+
+body{
+    margin: 2em;
+}
+
+.container{
+    width: 400px;
+    padding: 1em;
+    border: 2px solid blue;
+    display: flex;
+}
+
+.item{
+    background-color: #eee;
+    padding: 20px;
+    border: solid #000 2px;
+}
+
+.container + h2{
+    margin-top: 2em;
+}
+
+.flex-start{
+    justify-content: flex-start;
+}
+
+.centered{
+    justify-content: center;
+}
+
+.flex-end{
+    justify-content: flex-end;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.space-evenly{
+    justify-content: space-evenly;
+}

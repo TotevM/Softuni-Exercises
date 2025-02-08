@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2{
+    margin-bottom: 0.5em;
+}
+
+body{
+    margin: 2em;
+}
+
+.container{
+    height: 200px;
+    width: 400px;
+    padding: 1em;
+    border: 2px solid blue;
+    display: flex;
+}
+
+.item{
+    background-color: #eee;
+    padding: 20px;
+    border: solid #000 2px;
+}
+
+.container + h2{
+    margin-top: 2em;
+}
+
+.strech{
+    align-items: stretch;
+}
+
+.flex-start{
+    align-items: flex-start;
+}
+
+.centered{
+    align-items: center;
+}
+
+.flex-end{
+    align-items: flex-end;
+}
+
+.baseline{
+    align-items: baseline;
+}

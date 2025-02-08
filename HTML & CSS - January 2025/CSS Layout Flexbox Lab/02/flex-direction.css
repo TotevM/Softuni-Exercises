@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2{
+    margin-bottom: 0.5em;
+}
+
+body{
+    margin: 2em;
+}
+
+.container{
+    width: 400px;
+    padding: 1em;
+    border: 2px solid blue;
+    display: flex;
+}
+
+.item{
+    background-color: #eee;
+    padding: 20px;
+    border: solid #000 2px;
+}
+
+.container + h2{
+    margin-top: 2em;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.row-reversed{
+    flex-direction: row-reverse;
+}
+
+.col{
+    flex-direction: column;
+}
+
+.col-reversed{
+    flex-direction: column-reverse;
+}
