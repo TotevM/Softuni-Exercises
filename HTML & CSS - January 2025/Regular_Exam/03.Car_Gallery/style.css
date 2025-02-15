@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: inherit;
+}
+
+html{
+    box-sizing: inherit;
+}
+
+body{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: transparent;
+    position: absolute;
+    width: 1280px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+}
+
+.trans{
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 0 0 0.5em 0.5em;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffc3a0 100%);
+    height: 40dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.hero p{
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 1rem 3em;
+    border-radius: 0.4em;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+.rm{
+    border: 1px solid grey;
+    color: gray;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 0.4em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    max-width: fit-content;
+    align-self: center;
+}
+
+.rm:hover {
+    background: gray;
+    color: white;
+}
+
+.btn:hover {
+    background: white;
+    color: #ff6b6b;
+}
+
+.featured-cars {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    flex-wrap: wrap;
+}
+
+.car-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    justify-content: center;
+    align-items: last baseline;
+}
+
+.car-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.car-card h2 {
+    font-weight: 400;
+    margin: 1rem 0;
+    color: #56575C;
+    opacity: 0.9;
+}
+
+.car-card p {
+    color: #56575C;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    opacity: 0.7;
+    margin-top: 0.6em;
+    margin-bottom: 2em;
+}
+
+.signup-section {
+    display: flex;
+    background: url('images/promo.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.signup-section input[type="button"] {
+    background: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+
+.signup-section input[type="button"]:hover {
+    background: #e6e5e5;
+    color: #333;
+    border: #333 1px;
+}
+
+.weird-cars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.weird-cars h2 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.weird-cars-container {
+    display: flex;
+    width: 100%;
+    background-color: #F6F8FB;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4em;
+}
+
+.title-button{
+    margin-bottom: 2.5em;
+}
+
+.weird-cars-container img {
+    width: 260px;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+footer{
+    text-align: center;
+    padding: 2em 2em;
+    background: #f9f9f9;
+}
+
+.explore-section h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.explore-section p {
+    letter-spacing: 1px;
+    color: #F37B69;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 5em;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+hr{
+    border: 1px solid rgb(134, 133, 133, 0.3);
+    margin: 0 auto;
+    width: 60%;
+}
+
+.signup-container{
+    border: 1px rgba(255, 255, 255, 0.2) solid;
+    width: 60%;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.15);
+    justify-content: center;
+    align-items: center;
+    padding: 1em 1em;
+    justify-content: space-between;
+    border-radius: 0.5em;
+}
+
+.signup-container > h2{
+    font-weight: 300;
+}
+
+.read-article-btn{
+    border: 1px solid grey;
+    color: gray;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 0.4em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    max-width: fit-content;
+    align-self: center;
+}
+
+.read-article-btn:hover{
+    background-color: #e6e5e5;
+    color: #333;
+}
+
+.copy{
+    padding: 4em;
+    color:  rgb(134, 133, 133, 0.6);
+}
