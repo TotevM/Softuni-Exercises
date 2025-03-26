@@ -3,7 +3,7 @@ function extractOddElements(text = '') {
     const words = text.toLowerCase().split(' ');
 
     for (let i = 0; i < words.length; i++) {
-        let count = words.filter(word => word === words[i]).length;
+        let count = words.filter((word) => word === words[i]).length;
 
         if (count % 2 !== 0 && !arr.includes(words[i])) {
             arr.push(words[i]);
