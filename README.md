@@ -41,3 +41,15 @@ This repository contains solutions for the exercises from SoftUni's professional
 - **Entity Framework Core**: Working with ORM (Object-Relational Mapping) in .NET.
 - **Data Migrations**: Managing database schema changes with migrations.
 - **Performance Tuning**: Optimizing database access and queries.
+
+#### Front-End
+### HTML & CSS 
+- **Basic HTML & CSS** – Structuring and styling web pages, understanding layout mechanics and text styling  
+- **Responsive Web Design** – Implementing media queries and mobile-first design  
+- **Working with Forms** – Handling user input with HTML forms and validation
+
+### JavaScript Basics - February 2025  
+- **Fundamentals of JavaScript** – Understanding complex operations and data handling
+- **DOM Manipulation** – Interacting with HTML elements dynamically  
+- **Events & Event Listeners** – Handling user interactions on the web  
+- **Local Storage & APIs** – Storing data and fetching external resources
