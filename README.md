@@ -10,7 +10,7 @@ This repository contains solutions for the exercises from SoftUni's professional
 ## Course Modules
 
 ### C# Basics
-- **Introduction to Programming**: Understanding the basics of coding, using an Integrated Development Environment (IDE), and working with variables and data.
+- **Introduction to Programming**: Understanding the basics of coding, using an IDE, and working with variables and data.
 - **Operators and Expressions**: Performing simple calculations.
 - **Control Structures**: Using conditional statements (if-else) and loops (for, while).
 - **Console I/O**: Reading input from and writing output to the console.
@@ -60,3 +60,11 @@ This repository contains solutions for the exercises from SoftUni's professional
 - **HTTP Protocol**: Deep dive into HTTP request/response cycle and REST principles.
 - **State Management & Asynchronous Processing**: Managing application state and asynchronous operations.
 - **ASP.NET Core Identity**: Authentication and authorization in ASP.NET applications.
+
+#### ASP.NET Advanced
+- **Application Flow, Filters & Middleware**: Managing request pipeline, implementing filters, and configuring middleware components.
+- **Web API**: Building and consuming RESTful APIs in ASP.NET Core.
+- **Web Application Security and ASP.NET Core**: Security best practices and implementation strategies.
+- **Project Architecture**: Design patterns and architectural approaches for scalable applications.
+- **SignalR**: Real-time communication in web applications.
+- **Azure, Deployment and CI**: Cloud deployment strategies and continuous integration pipelines.
