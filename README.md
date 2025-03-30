@@ -44,12 +44,19 @@ This repository contains solutions for the exercises from SoftUni's professional
 
 ### Front-End
 #### HTML & CSS 
-- **Basic HTML & CSS** – Structuring and styling web pages, understanding layout mechanics and text styling  
-- **Responsive Web Design** – Implementing media queries and mobile-first design  
-- **Working with Forms** – Handling user input with HTML forms and validation
+- **Basic HTML & CSS**: Structuring and styling web pages, understanding layout mechanics and text styling  
+- **Responsive Web Design**: Implementing media queries and mobile-first design  
+- **Working with Forms**: Handling user input with HTML forms and validation
 
 #### JavaScript Basics - February 2025  
-- **Fundamentals of JavaScript** – Understanding complex operations and data handling
-- **DOM Manipulation** – Interacting with HTML elements dynamically  
-- **Events & Event Listeners** – Handling user interactions on the web  
-- **Local Storage & APIs** – Storing data and fetching external resources
+- **Fundamentals of JavaScript**: Understanding complex operations and data handling
+- **DOM Manipulation**: Interacting with HTML elements dynamically  
+- **Events & Event Listeners**: Handling user interactions on the web  
+- **Local Storage & APIs**: Storing data and fetching external resources
+
+### C# Web
+#### ASP.NET Fundamentals
+- **Internet Explained**: Understanding web fundamentals and how the internet works.
+- **HTTP Protocol**: Deep dive into HTTP request/response cycle and REST principles.
+- **State Management & Asynchronous Processing**: Managing application state and asynchronous operations.
+- **ASP.NET Core Identity**: Authentication and authorization in ASP.NET applications.
