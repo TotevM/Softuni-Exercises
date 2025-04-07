@@ -8,12 +8,12 @@
 
 :root {
     --accent-color: #234465;
-    --accent-color-text: #FFF;
+    --accent-color-text: #fff;
     --border-radius: 0.3em;
 }
 
 html {
-    font: 16px/1.5 "Lato", sans-serif;
+    font: 16px/1.5 'Lato', sans-serif;
 
     @media (width < 900px) {
         font-size: 14px;
@@ -22,11 +22,12 @@ html {
     @media (width < 600px) {
         font-size: 12px;
     }
-
 }
 
-body, input, button {
-    font: inherit
+body,
+input,
+button {
+    font: inherit;
 }
 
 body {
@@ -43,18 +44,22 @@ a {
     margin-bottom: 0.5em;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
     padding-bottom: 1.5em;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-position: inside;
 }
 
-input, textarea {
+input,
+textarea {
     display: block;
     width: 100%;
-    background: #FFF;
+    background: #fff;
     border: 2px solid var(--accent-color);
     border-radius: var(--border-radius);
     padding: 0.5em 0.8em;
@@ -72,7 +77,7 @@ label {
 }
 
 button,
-input[type="button"] {
+input[type='button'] {
     background: var(--accent-color);
     color: var(--accent-color-text);
     /* text-transform: uppercase; */
@@ -87,7 +92,7 @@ input[type="button"] {
     &:hover {
         background: var(--accent-color-text);
         color: var(--accent-color);
-    }    
+    }
 }
 
 .shopping-cart {
@@ -98,15 +103,23 @@ input[type="button"] {
 
 .column-labels {
     display: flex;
-    
+
     & > label {
         flex: 0 0 auto;
         padding: 1em 2em;
 
-        &:nth-child(1) { flex-basis: 165px; }
-        &:nth-child(2) { flex-basis: 65%; }
-        &:nth-child(3) { flex-basis: 110px; }
-        &:nth-child(4) { text-align: right; }
+        &:nth-child(1) {
+            flex-basis: 165px;
+        }
+        &:nth-child(2) {
+            flex-basis: 65%;
+        }
+        &:nth-child(3) {
+            flex-basis: 110px;
+        }
+        &:nth-child(4) {
+            text-align: right;
+        }
     }
 }
 
